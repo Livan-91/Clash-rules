@@ -29,11 +29,11 @@ except:
     pass
 
 
-class nyaasi(object):
+class sukebeinyaasi(object):
     """Class used by qBittorrent to search for torrents"""
 
-    url = 'https://sukebei.nyaa.si/'
-    name = 'sukebei'
+    url = 'https://sukebei.nyaa.si'
+    name = 'Sukebei.Nyaa.si'
     # defines which search categories are supported by this search engine
     # and their corresponding id. Possible categories are:
     # 'all', 'movies', 'tv', 'music', 'games', 'anime', 'software', 'pictures',
@@ -48,7 +48,7 @@ class nyaasi(object):
             'tv': '4_0',
             'movies': '4_0'}
 
-    class NyaasiParser(HTMLParser):
+    class SukebeiNyaasiParser(HTMLParser):
         """ Parses Nyaa.si browse page for search resand prints them"""
         def __init__(self, res, url):
             try:
@@ -125,7 +125,6 @@ class nyaasi(object):
     def search(self, what, cat='all'):
         """
         Retreive and parse engine search results by category and query.
-
         Parameters:
         :param what: a string with the search tokens, already escaped
                      (e.g. "Ubuntu+Linux")
@@ -139,7 +138,7 @@ class nyaasi(object):
 
         hits = []
         page = 1
-        parser = self.NyaasiParser(hits, self.url)
+        parser = self.SukebeiNyaasiParser(hits, self.url)
         while True:
             res = retrieve_url(url + "&p={}".format(page))
             parser.feed(res)
