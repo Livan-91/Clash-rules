@@ -33,7 +33,7 @@ class nyaasi(object):
     """Class used by qBittorrent to search for torrents"""
 
     url = 'https://sukebei.nyaa.si/'
-    name = 'sukebei'
+    name = 'Nyaa.si'
     # defines which search categories are supported by this search engine
     # and their corresponding id. Possible categories are:
     # 'all', 'movies', 'tv', 'music', 'games', 'anime', 'software', 'pictures',
